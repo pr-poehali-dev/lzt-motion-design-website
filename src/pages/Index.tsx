@@ -11,23 +11,36 @@ const Index = () => {
   const services = [
     {
       icon: 'Video',
-      title: 'Видео-анимация',
-      description: 'Создаем захватывающие анимированные видео для вашего бренда'
+      title: 'Рекламное видео',
+      description: 'Создаем эффектные рекламные ролики для продвижения вашего бренда'
     },
     {
-      icon: 'Sparkles',
-      title: 'Моушн-графика',
-      description: 'Динамичная графика для рекламы и социальных сетей'
+      icon: 'Image',
+      title: 'Обработка фотографий',
+      description: 'Профессиональная ретушь и цветокоррекция ваших снимков'
     },
     {
-      icon: 'Zap',
-      title: '3D-анимация',
-      description: 'Объемные визуализации и анимированные модели'
+      icon: 'Film',
+      title: 'Монтаж для Youtube',
+      description: 'Динамичный монтаж видеороликов для вашего канала'
+    }
+  ];
+
+  const team = [
+    {
+      name: 'Красковский Дмитрий',
+      role: 'Креативный директор',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop'
     },
     {
-      icon: 'Palette',
-      title: 'Дизайн заставок',
-      description: 'Эффектные интро и outro для вашего контента'
+      name: 'Валерий Лимонов',
+      role: 'Моушн-дизайнер',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
+    },
+    {
+      name: 'Данила Шариков',
+      role: 'Видеомонтажер',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
     }
   ];
 
@@ -118,7 +131,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, idx) => (
               <Card
                 key={idx}
@@ -172,6 +185,40 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="team" className="py-32">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 gradient-text">Наша команда</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Профессионалы, которые создают визуальную магию
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {team.map((member, idx) => (
+              <Card
+                key={idx}
+                className="bg-card border-border hover-scale hover-glow overflow-hidden"
+              >
+                <CardContent className="p-0">
+                  <div className="aspect-square overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6 text-center">
+                    <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+                    <p className="text-primary font-medium">{member.role}</p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -277,14 +324,14 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <div className="flex justify-center gap-6 mt-12">
+            <div className="flex justify-center gap-6 mt-12 flex-wrap">
               <Button variant="outline" size="lg" className="hover-scale border-2 border-primary">
                 <Icon name="Mail" size={20} className="mr-2" />
                 hello@lzt.studio
               </Button>
               <Button variant="outline" size="lg" className="hover-scale border-2 border-secondary">
                 <Icon name="Phone" size={20} className="mr-2" />
-                +7 (999) 123-45-67
+                +7 (900) 555-35-35
               </Button>
             </div>
           </div>
